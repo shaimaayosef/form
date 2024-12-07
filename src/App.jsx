@@ -57,10 +57,10 @@ const ContactForm = () => {
   };
 
   return (
-    <div style={{ maxWidth: "400px", margin: "auto" }}>
+    <div className="form-container">
       <h2>Contact Us</h2>
       <form onSubmit={handleSubmit} noValidate>
-        <div style={{ marginBottom: "16px" }}>
+        <div className="form-group">
           <label htmlFor="name">Name</label>
           <input
             type="text"
@@ -68,12 +68,12 @@ const ContactForm = () => {
             name="name"
             value={formData.name}
             onChange={handleChange}
-            style={{ width: "100%", padding: "8px", marginTop: "4px" }}
+            className="form-input"
           />
-          {errors.name && <p style={{ color: "red" }}>{errors.name}</p>}
+          {errors.name && <p className="error-text">{errors.name}</p>}
         </div>
 
-        <div style={{ marginBottom: "16px" }}>
+        <div className="form-group">
           <label htmlFor="email">Email</label>
           <input
             type="email"
@@ -81,31 +81,27 @@ const ContactForm = () => {
             name="email"
             value={formData.email}
             onChange={handleChange}
-            style={{ width: "100%", padding: "8px", marginTop: "4px" }}
+            className="form-input"
           />
-          {errors.email && <p style={{ color: "red" }}>{errors.email}</p>}
+          {errors.email && <p className="error-text">{errors.email}</p>}
         </div>
 
-        <div style={{ marginBottom: "16px" }}>
+        <div className="form-group">
           <label htmlFor="message">Message</label>
           <textarea
             id="message"
             name="message"
             value={formData.message}
             onChange={handleChange}
-            style={{ width: "100%", padding: "8px", marginTop: "4px" }}
+            className="form-input"
           />
-          {errors.message && <p style={{ color: "red" }}>{errors.message}</p>}
+          {errors.message && <p className="error-text">{errors.message}</p>}
         </div>
 
-        <button
-          type="submit"
-          style={{ padding: "10px 16px", backgroundColor: "blue", color: "white", border: "none", cursor: "pointer" }}
-        >
+        <button type="submit" className="form-button">
           Submit
         </button>
       </form>
-      <h4>this is a simple form</h4>
     </div>
   );
 };
